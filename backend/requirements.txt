@@ -8,6 +8,7 @@ passlib[bcrypt]==1.7.4
 # Database
 sqlalchemy==2.0.25
 asyncpg==0.29.0
+psycopg2-binary==2.9.9  # Sync driver for Alembic migrations
 alembic==1.13.1
 redis==5.0.1
 

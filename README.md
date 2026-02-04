@@ -100,6 +100,31 @@ This starts:
 - Redis on port 6379
 - FastAPI application on port 8000
 
+## Database Migrations (Alembic)
+
+This project uses Alembic for database migrations.
+
+```bash
+cd backend
+
+# Generate a new migration after changing models
+alembic revision --autogenerate -m "Description of changes"
+
+# Apply all pending migrations
+alembic upgrade head
+
+# Rollback one migration
+alembic downgrade -1
+
+# View migration history
+alembic history
+
+# View current database version
+alembic current
+```
+
+**First-time setup:** After cloning, run `alembic upgrade head` to create all tables.
+
 ## API Documentation
 
 Once running, access the interactive API docs at:
