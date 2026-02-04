@@ -19,6 +19,10 @@ class JobAddressInline(BaseModel):
     access_notes: Optional[str] = None
 
 
+# Alias for backwards compatibility
+AddressInline = JobAddressInline
+
+
 class JobCreate(BaseModel):
     """Schema for creating a job (self-service booking)."""
     
@@ -29,10 +33,10 @@ class JobCreate(BaseModel):
     address_id: Optional[UUID] = None
     address: Optional[JobAddressInline] = None
     
-    # Scheduling
-    preferred_date: date
-    preferred_time_start: time
-    preferred_time_end: time
+    # Scheduling (optional for emergency bookings)
+    preferred_date: Optional[date] = None
+    preferred_time_start: Optional[time] = None
+    preferred_time_end: Optional[time] = None
     
     # For slot reservation flow
     reservation_token: Optional[str] = None

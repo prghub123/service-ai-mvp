@@ -21,6 +21,9 @@ class Technician(Base):
     phone = Column(String(20), nullable=False)
     email = Column(String(255))
     
+    # Auth (for mobile app login)
+    password_hash = Column(String(255))
+    
     # Status
     is_active = Column(Boolean, default=True)
     is_on_call = Column(Boolean, default=False)  # Available for emergencies after hours

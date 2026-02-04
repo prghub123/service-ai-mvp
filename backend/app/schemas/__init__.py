@@ -18,6 +18,8 @@ from app.schemas.job import (
     JobNoteCreate,
     JobNoteResponse,
     JobStatusUpdate,
+    JobAddressInline,
+    AddressInline,
 )
 from app.schemas.schedule import (
     AvailabilityRequest,
@@ -51,6 +53,8 @@ __all__ = [
     "JobNoteCreate",
     "JobNoteResponse",
     "JobStatusUpdate",
+    "JobAddressInline",
+    "AddressInline",
     # Schedule
     "AvailabilityRequest",
     "AvailabilityResponse",

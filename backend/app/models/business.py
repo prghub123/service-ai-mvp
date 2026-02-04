@@ -67,6 +67,7 @@ class Business(Base):
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
     
     # Relationships
+    users = relationship("User", back_populates="business")
     customers = relationship("Customer", back_populates="business")
     technicians = relationship("Technician", back_populates="business")
     jobs = relationship("Job", back_populates="business")
