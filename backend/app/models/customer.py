@@ -2,7 +2,7 @@
 
 import uuid
 from datetime import datetime
-from sqlalchemy import Column, String, Boolean, DateTime, ForeignKey, Text, Index
+from sqlalchemy import Column, String, Boolean, DateTime, ForeignKey, Text, Index, Integer
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
 from app.database import Base
@@ -120,7 +120,3 @@ class OTPCode(Base):
     
     def __repr__(self):
         return f"<OTPCode {self.phone}>"
-
-
-# Need to import Integer for OTPCode
-from sqlalchemy import Integer
