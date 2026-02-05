@@ -38,5 +38,5 @@ tenacity==8.2.3
 
 # Testing
 pytest==8.0.0
-pytest-asyncio==0.23.4
+pytest-asyncio==0.23.5
 httpx==0.26.0
