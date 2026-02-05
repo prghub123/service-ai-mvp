@@ -20,9 +20,9 @@ phonenumbers==8.13.27
 
 # AI/LLM
 openai==1.12.0
-langchain==0.1.6
-langchain-openai==0.0.5
-langgraph==0.0.26
+langchain==0.1.16
+langchain-openai==0.1.1
+langgraph==0.0.40
 
 # Integrations
 twilio==8.13.0
