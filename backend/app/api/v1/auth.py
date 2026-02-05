@@ -4,6 +4,7 @@ from datetime import datetime, timedelta
 from typing import Optional
 from uuid import UUID
 from fastapi import APIRouter, Depends, HTTPException, status, Header
+from fastapi.security import HTTPBearer
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
 from pydantic import BaseModel, EmailStr
@@ -446,7 +447,3 @@ async def get_current_user_info(
         status_code=status.HTTP_401_UNAUTHORIZED,
         detail="Invalid token type"
     )
-
-
-# Import HTTPBearer for /me endpoint
-from fastapi.security import HTTPBearer

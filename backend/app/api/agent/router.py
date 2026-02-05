@@ -14,7 +14,7 @@ from app.agents.intake_agent import IntakeAgent
 from app.agents.emergency_detector import EmergencyDetector
 from app.integrations.vapi_client import VapiClient
 
-router = APIRouter()
+agent_router = APIRouter()
 
 
 class IntakeRequest(BaseModel):
@@ -54,7 +54,7 @@ class CallTokenResponse(BaseModel):
     expires_at: str
 
 
-@router.post("/intake", response_model=IntakeResponse)
+@agent_router.post("/intake", response_model=IntakeResponse)
 async def process_intake(
     request: IntakeRequest,
     db: AsyncSession = Depends(get_db),
@@ -95,7 +95,7 @@ async def process_intake(
     )
 
 
-@router.post("/emergency-check", response_model=EmergencyCheckResponse)
+@agent_router.post("/emergency-check", response_model=EmergencyCheckResponse)
 async def check_emergency(
     request: EmergencyCheckRequest,
     db: AsyncSession = Depends(get_db),
@@ -117,7 +117,7 @@ async def check_emergency(
     )
 
 
-@router.get("/call-token", response_model=CallTokenResponse)
+@agent_router.get("/call-token", response_model=CallTokenResponse)
 async def get_call_token(
     db: AsyncSession = Depends(get_db),
     business: Business = Depends(get_current_business),
